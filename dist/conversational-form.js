@@ -1462,6 +1462,7 @@ var cf;
             this.interacting = false;
         };
         ScrollController.prototype.onInteractMove = function (event) {
+		return;
             if (this.interacting) {
                 var vector = cf.Helpers.getXYFromMouseTouchEvent(event);
                 var newAcc = vector.x - this.startX;
