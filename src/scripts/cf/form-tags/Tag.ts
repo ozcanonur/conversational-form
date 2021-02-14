@@ -406,6 +406,7 @@ namespace cf {
 				&& valueText.length > 0
 			) {
 				this.pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				this.domElement.setAttribute('autocomplete', 'email');
 			} else if (
 				// When NOT required: Reset in the event user already typed something, and now they clear their input and want to submit nothing ==> remove pattern previously applied
 				this.domElement.hasAttribute('type')
@@ -415,6 +416,7 @@ namespace cf {
 				&& !this.required
 			) {
 				this.pattern = null;
+				this.domElement.setAttribute('autocomplete', 'email');
 			}
 
 			if(this.pattern){
